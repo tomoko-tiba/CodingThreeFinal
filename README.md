@@ -43,7 +43,7 @@ predicted_probabilities = model.predict(token_list, verbose=0)
 adam = Adam(lr=0.01)
 # WARNING:absl:`lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.Adam.
 ```
-这个警告信息是在使用Keras优化器时出现的。它提醒我lr参数已经过时，不再建议使用，而是应该使用learning_rate参数来指定学习率。
+This warning message occurs when using the Keras optimizer. It notifies me that the "lr" parameter is deprecated and no longer recommended to use. Instead, I should use the "learning_rate" parameter to specify the learning rate.
 
 ```python
 # After modification
@@ -117,7 +117,7 @@ Due to this dataset, where the lyrics of each song are individually stored in se
 
 ### Training Attempt: 
 
-在经过上述前期的过程之后，我终于开始了第一次训练。但是由于参考的blog数据中只有2102行歌词，而我最终整理的数据约有有11k行的歌词。导致训练时间大大增长。
+After going through the aforementioned preliminary process, I finally began the first training session. However, due to the reference blog data containing only 2,102 lines of lyrics, while the final compiled dataset consisted of approximately 11,000 lines of lyrics, the training time significantly increased.
 
 ```python
 model = Sequential()
@@ -134,14 +134,13 @@ print(model)
 # ref：https://towardsdatascience.com/nlp-in-tensorflow-generate-an-ed-sheeran-song-8f99fe76662d
 ```
 
-在经过漫长的等待后，电脑运行了100个epochs，出现了第一次的训练结果：
+After a long wait, the computer completed 100 epochs, and the first training results emerged:
 
 ![结果1](https://github.com/tomoko-tiba/CodingThreeFinal/assets/41440180/1a608eb9-2e19-4b83-b00b-35f16383ed98)
 
+However, the final results were highly unsatisfactory. From a quantitative perspective, the accuracy score was only around 0.45, whereas it reached approximately 0.9 when running the data from the blog. Additionally, the loss value was around 2.45, which is relatively high.
 
-然而最终的效果非常不理想，从数据上来看，accuracy的值仅有0.45左右，而跑blog中的数据时，约有0.9，loss值也在2.45左右，偏高。
-
-从生成的文字结果上看，它甚至经常不能组成完整的单词。
+Examining the generated text, it was evident that the model frequently failed to form complete words. This severely impacted the coherency and overall quality of the generated lyrics.
 
 ```python
 seed_text = "What love is"
@@ -157,7 +156,7 @@ next_words = 100
 # Result：anymoreviewsaysr kids mondaysardwalk but they follow follow you home
 ```
 
-最开始我尝试调整了learning_rate，尝试使用更低的数值，但是结果并没有明显的改善。后来我反复的查看了代码，发现我的数据中，许多单词包含了回车符'\r'，我猜测是这个字符导致了生成错误的单词。
+At first, I attempted to adjust the learning_rate by using lower values, but there was no significant improvement in the results. Later on, while reviewing the code repeatedly, I noticed that many words in my data contained the carriage return character '\r'. I suspected that this character was causing the generation of incorrect words.
 ```python
 tokenizer = Tokenizer()
 data = open(path_to_file, 'rb').read().decode(encoding='utf-8')
@@ -172,7 +171,8 @@ print(tokenizer.word_index)
 print(total_words)
 # {'you': 1, 'i': 2, 'the': 3, 'and': 4, '\r': 5, 'to': 6, 'a': 7, 'in': 8, 'it': 9, 'my': 10, 'me': 11, 'your': 12, 'of': 13, 'that': 14, "i'm": 15, 'but': 16, 'all': 17, 'like': 18, 'on': 19, 'we': 20, 'oh': 21, 'know': 22, 'is': 23, 'was': 24, 'be': 25, 'this': 26, "it's": 27, 'so': 28, 'just': 29, 'when': 30, 'for': 31, "don't": 32, 'never': 33, 'you\r': 34, 'what': 35, "you're": 36, 'with': 37, 'me\r': 38, 'at': 39, 'if': 40, 'up': 41, "'cause": 42, 'love': 43, 'no': 44, 'now': 45, 'back': 46, 'one': 47, 'they': 48, 'were': 49, 'might': 50, 'time': 51, 'out': 52, 'got': 53, 'think': 54, 'like\r': 55, 'ooh': 56, 'see': 57, 'could': 58, 'say': 59, 'are': 60, 'not': 61, 'been': 62, 'also': 63, 'can': 64, 'wanna': 65, 'he': 66, 'come': 67, "can't": 68, "i'll": 69, 'ever': 70, 'get': 71, 'do': 72, 'have': 73, 'how': 74, 'want': 75, 'had': 76, 'from': 77, 'there': 78, 'said': 79, 'take': 80, 'still': 81, 'go': 82, 'right': 83, 'about': 84, 'look': 85, 'she': 86, 'did': 87, "i'd": 88, 'down': 89, 'would': 90, "i've": 91, 'gonna': 92, 'yeah': 93, 'baby': 94, 'as': 95, 'oh\r': 96, "that's": 97, 'made': 98, 'tell': 99, 'time\r': 100, 'it\r': 101, "didn't": 102, 'stay': 103, 'too': 104, 'last': 105, 'down\r': 106, 'now\r': 107, 'here': 108... .... 
 ```
-我尝试去除回车符，看看是否能优化生成的结果。
+
+I tried removing the carriage return characters to see if it would optimize the generated results.
 ```python
 # After modification
 tokenizer = Tokenizer()
@@ -180,7 +180,8 @@ data = open(path_to_file, 'rb').read().decode(encoding='utf-8')
 cleaned_data = data.replace("\r", "")
 corpus = data.lower().split("\n")
 ```
-第2次结果有了明显的优化，accuracy的值由0.45提升到了0.65，loss值也从2.4降到了1.4：
+
+The second iteration showed significant improvement, with the accuracy value increasing from 0.45 to 0.65, and the loss value decreasing from 2.4 to 1.4.
 ```
 Epoch 1/50
 2178/2178 [==============================] - 69s 31ms/step - loss: 5.2726 - accuracy: 0.1505
