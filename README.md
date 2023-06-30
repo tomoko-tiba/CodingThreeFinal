@@ -14,7 +14,7 @@ Conduct initial research on natural language processing (NLP) techniques and dee
 
 ### Preliminary Debug：
 
-After obtaining the reference code, I attempted to train it using the lyrics data provided in the blog. However, I encountered two bugs that prevented smooth execution.
+After obtaining the reference code, I attempted to train it using the lyrics data provided in the blog. However, I encountered three bugs that prevented smooth execution.
 
 ***Bug1***
 ```python
@@ -38,6 +38,19 @@ The alternative approach is to use the predict method to obtain the output proba
 predicted_probabilities = model.predict(token_list, verbose=0)
 ```
 ***Bug2***
+
+```python
+adam = Adam(lr=0.01)
+# WARNING:absl:`lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.Adam.
+```
+这个警告信息是在使用Keras优化器时出现的。它提醒我lr参数已经过时，不再建议使用，而是应该使用learning_rate参数来指定学习率。
+
+```python
+# After modification
+adam = Adam(learning_rate=0.01)
+```
+
+***Bug3***
 
 ```python
 for i in range(next_words):
@@ -104,7 +117,27 @@ Collect the entire collection of Taylor Swift's lyrics from the webpage "Taylor 
 
 ### First Training Attempt: 
 
-在经过上述前期的过程之后
+在经过上述前期的过程之后，我终于开始了第一次训练。但是由于参考的blog数据中只有2102行歌词，而我最终整理的数据约有有11k行的歌词。导致训练时间大大增长。
+
+```python
+model = Sequential()
+model.add(Embedding(total_words, 100, input_length=max_sequence_len-1))
+model.add(Bidirectional(LSTM(150)))
+model.add(Dense(total_words, activation='softmax'))
+adam = Adam(learning_rate=0.005)
+model.compile(loss='categorical_crossentropy', optimizer=adam, metrics=['accuracy'])
+#earlystop = EarlyStopping(monitor='val_loss', min_delta=0, patience=5, verbose=0, mode='auto')
+history = model.fit(predictors, label, epochs=100, verbose=1)
+#print model.summary()
+print(model)
+
+# ref：https://towardsdatascience.com/nlp-in-tensorflow-generate-an-ed-sheeran-song-8f99fe76662d
+```
+
+
+在经过漫长的等待后，电脑运行了100个epochs，出现了第一次的训练结果：
+
+![结果1](https://github.com/tomoko-tiba/CodingThreeFinal/assets/41440180/1a608eb9-2e19-4b83-b00b-35f16383ed98)
 
 
  
