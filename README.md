@@ -113,7 +113,7 @@ print(seed_text)
 
 Collect the entire collection of Taylor Swift's lyrics from the webpage "Taylor Swift - All Lyrics (30 Albums)" available at https://www.kaggle.com/datasets/ishikajohari/taylor-swift-all-lyrics-30-albums. This dataset provides a comprehensive collection of Taylor Swift's lyrics from 30 albums. 
 
-"Due to this dataset, where the lyrics of each song are individually stored in separate text files, I manually merged all the lyrics into one file. At the same time, I cleaned the data by removing irrelevant characters such as ‘ [Pre-Chorus], [Chorus], [Verse 2] ’, and repetitive interjections like ‘ (Oh, oh, oh, oh, oh, oh, oh, oh, oh, oh) ’. This ensures that the final generated output is not influenced by them.
+Due to this dataset, where the lyrics of each song are individually stored in separate text files, I manually merged all the lyrics into one file. At the same time, I cleaned the data by removing irrelevant characters such as ‘ [Pre-Chorus], [Chorus], [Verse 2] ’, and repetitive interjections like ‘ (Oh, oh, oh, oh, oh, oh, oh, oh, oh, oh) ’. This ensures that the final generated output is not influenced by them.
 
 ### First Training Attempt: 
 
@@ -134,10 +134,28 @@ print(model)
 # ref：https://towardsdatascience.com/nlp-in-tensorflow-generate-an-ed-sheeran-song-8f99fe76662d
 ```
 
-
 在经过漫长的等待后，电脑运行了100个epochs，出现了第一次的训练结果：
 
 ![结果1](https://github.com/tomoko-tiba/CodingThreeFinal/assets/41440180/1a608eb9-2e19-4b83-b00b-35f16383ed98)
 
 
+然而最终的效果非常不理想，从数据上来看，accuracy的值仅有0.45左右，而跑blog中的数据时，约有0.9，loss值也在2.45左右，偏高。
+
+从生成的文字结果上看，它甚至经常不能组成完整的单词。
+
+```python
+seed_text = "What love is"
+next_words = 60
+# Result：ohncesscommunityirtsat i love is a chance
+
+seed_text = "HI"
+next_words = 60
+# Result：parallel wireheroolee who i could be the man who'd throw
+
+seed_text = "Just close your eyes"
+next_words = 100
+# Result：Just close your eyes（100）： anymoreviewsaysr kids mondaysardwalk but they follow follow you home
+```
+
+最开始我尝试调整了learning_rate，尝试使用更低的数值，但是把并没有明显的改观。
  
