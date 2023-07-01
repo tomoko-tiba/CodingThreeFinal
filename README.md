@@ -288,7 +288,7 @@ Epoch 50/50
 ![1](https://github.com/tomoko-tiba/CodingThreeFinal/assets/41440180/934d3b02-442a-4519-b560-287dfbaf36a5)
 
 
-### Result:
+### Result 1:
 ```
 Just close your eyes
 looking into me like me
@@ -337,6 +337,254 @@ to your face
 in the mirror like the others
 start home turned down you pass
 ```
+
+### Evolution
+
+在接下来中，我设置了更低的learning_rate为0.001，并将epochs设置为100。
+```
+Epoch 1/100
+2178/2178 [==============================] - 67s 30ms/step - loss: 5.7996 - accuracy: 0.0807
+Epoch 2/100
+2178/2178 [==============================] - 66s 30ms/step - loss: 4.7744 - accuracy: 0.1652
+Epoch 3/100
+2178/2178 [==============================] - 66s 30ms/step - loss: 4.1149 - accuracy: 0.2411
+Epoch 4/100
+2178/2178 [==============================] - 66s 30ms/step - loss: 3.5862 - accuracy: 0.3135
+Epoch 5/100
+2178/2178 [==============================] - 66s 30ms/step - loss: 3.1554 - accuracy: 0.3781
+Epoch 6/100
+2178/2178 [==============================] - 69s 31ms/step - loss: 2.7986 - accuracy: 0.4354
+Epoch 7/100
+2178/2178 [==============================] - 68s 31ms/step - loss: 2.5049 - accuracy: 0.4844
+Epoch 8/100
+2178/2178 [==============================] - 66s 30ms/step - loss: 2.2569 - accuracy: 0.5299
+Epoch 9/100
+2178/2178 [==============================] - 66s 30ms/step - loss: 2.0486 - accuracy: 0.5673
+Epoch 10/100
+2178/2178 [==============================] - 65s 30ms/step - loss: 1.8731 - accuracy: 0.5990
+Epoch 11/100
+2178/2178 [==============================] - 66s 30ms/step - loss: 1.7231 - accuracy: 0.6288
+Epoch 12/100
+2178/2178 [==============================] - 66s 30ms/step - loss: 1.5970 - accuracy: 0.6520
+Epoch 13/100
+2178/2178 [==============================] - 66s 30ms/step - loss: 1.4863 - accuracy: 0.6732
+Epoch 14/100
+2178/2178 [==============================] - 65s 30ms/step - loss: 1.3915 - accuracy: 0.6898
+Epoch 15/100
+2178/2178 [==============================] - 65s 30ms/step - loss: 1.3108 - accuracy: 0.7057
+Epoch 16/100
+2178/2178 [==============================] - 66s 30ms/step - loss: 1.2385 - accuracy: 0.7190
+Epoch 17/100
+2178/2178 [==============================] - 66s 30ms/step - loss: 1.1760 - accuracy: 0.7322
+Epoch 18/100
+2178/2178 [==============================] - 66s 30ms/step - loss: 1.1203 - accuracy: 0.7427
+Epoch 19/100
+2178/2178 [==============================] - 66s 30ms/step - loss: 1.0753 - accuracy: 0.7504
+Epoch 20/100
+2178/2178 [==============================] - 66s 30ms/step - loss: 1.0308 - accuracy: 0.7608
+Epoch 21/100
+2178/2178 [==============================] - 66s 30ms/step - loss: 0.9969 - accuracy: 0.7659
+Epoch 22/100
+2178/2178 [==============================] - 68s 31ms/step - loss: 0.9627 - accuracy: 0.7733
+Epoch 23/100
+2178/2178 [==============================] - 68s 31ms/step - loss: 0.9342 - accuracy: 0.7766
+Epoch 24/100
+2178/2178 [==============================] - 69s 32ms/step - loss: 0.9103 - accuracy: 0.7813
+Epoch 25/100
+2178/2178 [==============================] - 70s 32ms/step - loss: 0.8903 - accuracy: 0.7851
+Epoch 26/100
+2178/2178 [==============================] - 70s 32ms/step - loss: 0.8703 - accuracy: 0.7876
+Epoch 27/100
+2178/2178 [==============================] - 65s 30ms/step - loss: 0.8530 - accuracy: 0.7910
+Epoch 28/100
+2178/2178 [==============================] - 66s 30ms/step - loss: 0.8378 - accuracy: 0.7934
+Epoch 29/100
+2178/2178 [==============================] - 66s 30ms/step - loss: 0.8264 - accuracy: 0.7946
+Epoch 30/100
+2178/2178 [==============================] - 66s 30ms/step - loss: 0.8128 - accuracy: 0.7970
+Epoch 31/100
+2178/2178 [==============================] - 64s 29ms/step - loss: 0.8047 - accuracy: 0.7987
+Epoch 32/100
+2178/2178 [==============================] - 64s 29ms/step - loss: 0.7942 - accuracy: 0.8002
+Epoch 33/100
+2178/2178 [==============================] - 64s 29ms/step - loss: 0.7848 - accuracy: 0.8015
+Epoch 34/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.7783 - accuracy: 0.8016
+Epoch 35/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.7716 - accuracy: 0.8019
+Epoch 36/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.7643 - accuracy: 0.8037
+Epoch 37/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.7599 - accuracy: 0.8040
+Epoch 38/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.7535 - accuracy: 0.8051
+Epoch 39/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.7503 - accuracy: 0.8045
+Epoch 40/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.7469 - accuracy: 0.8044
+Epoch 41/100
+2178/2178 [==============================] - 64s 29ms/step - loss: 0.7423 - accuracy: 0.8049
+Epoch 42/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.7373 - accuracy: 0.8061
+Epoch 43/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.7342 - accuracy: 0.8063
+Epoch 44/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.7329 - accuracy: 0.8054
+Epoch 45/100
+2178/2178 [==============================] - 70s 32ms/step - loss: 0.7312 - accuracy: 0.8051
+Epoch 46/100
+2178/2178 [==============================] - 64s 29ms/step - loss: 0.7272 - accuracy: 0.8053
+Epoch 47/100
+2178/2178 [==============================] - 64s 29ms/step - loss: 0.7246 - accuracy: 0.8067
+Epoch 48/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.7246 - accuracy: 0.8062
+Epoch 49/100
+2178/2178 [==============================] - 64s 29ms/step - loss: 0.7209 - accuracy: 0.8064
+Epoch 50/100
+2178/2178 [==============================] - 64s 29ms/step - loss: 0.7188 - accuracy: 0.8067
+Epoch 51/100
+2178/2178 [==============================] - 64s 29ms/step - loss: 0.7178 - accuracy: 0.8060
+Epoch 52/100
+2178/2178 [==============================] - 64s 29ms/step - loss: 0.7153 - accuracy: 0.8071
+Epoch 53/100
+2178/2178 [==============================] - 65s 30ms/step - loss: 0.7136 - accuracy: 0.8072
+Epoch 54/100
+2178/2178 [==============================] - 64s 30ms/step - loss: 0.7121 - accuracy: 0.8077
+Epoch 55/100
+2178/2178 [==============================] - 64s 30ms/step - loss: 0.7111 - accuracy: 0.8075
+Epoch 56/100
+2178/2178 [==============================] - 64s 29ms/step - loss: 0.7106 - accuracy: 0.8069
+Epoch 57/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.7068 - accuracy: 0.8070
+Epoch 58/100
+2178/2178 [==============================] - 64s 29ms/step - loss: 0.7065 - accuracy: 0.8068
+Epoch 59/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.7065 - accuracy: 0.8064
+Epoch 60/100
+2178/2178 [==============================] - 64s 29ms/step - loss: 0.7054 - accuracy: 0.8077
+Epoch 61/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.7040 - accuracy: 0.8071
+Epoch 62/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.7028 - accuracy: 0.8067
+Epoch 63/100
+2178/2178 [==============================] - 64s 29ms/step - loss: 0.7020 - accuracy: 0.8073
+Epoch 64/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.6996 - accuracy: 0.8076
+Epoch 65/100
+2178/2178 [==============================] - 62s 29ms/step - loss: 0.7016 - accuracy: 0.8077
+Epoch 66/100
+2178/2178 [==============================] - 62s 29ms/step - loss: 0.6989 - accuracy: 0.8078
+Epoch 67/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.6973 - accuracy: 0.8077
+Epoch 68/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.6993 - accuracy: 0.8065
+Epoch 69/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.6962 - accuracy: 0.8077
+Epoch 70/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.6982 - accuracy: 0.8077
+Epoch 71/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.6953 - accuracy: 0.8080
+Epoch 72/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.6962 - accuracy: 0.8070
+Epoch 73/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.6959 - accuracy: 0.8074
+Epoch 74/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.6940 - accuracy: 0.8080
+Epoch 75/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.6933 - accuracy: 0.8082
+Epoch 76/100
+2178/2178 [==============================] - 62s 29ms/step - loss: 0.6937 - accuracy: 0.8079
+Epoch 77/100
+2178/2178 [==============================] - 62s 29ms/step - loss: 0.6923 - accuracy: 0.8082
+Epoch 78/100
+2178/2178 [==============================] - 62s 29ms/step - loss: 0.6918 - accuracy: 0.8083
+Epoch 79/100
+2178/2178 [==============================] - 62s 28ms/step - loss: 0.6920 - accuracy: 0.8082
+Epoch 80/100
+2178/2178 [==============================] - 62s 28ms/step - loss: 0.6934 - accuracy: 0.8075
+Epoch 81/100
+2178/2178 [==============================] - 62s 29ms/step - loss: 0.6911 - accuracy: 0.8079
+Epoch 82/100
+2178/2178 [==============================] - 62s 29ms/step - loss: 0.6916 - accuracy: 0.8069
+Epoch 83/100
+2178/2178 [==============================] - 62s 29ms/step - loss: 0.6893 - accuracy: 0.8079
+Epoch 84/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.6899 - accuracy: 0.8077
+Epoch 85/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.6884 - accuracy: 0.8079
+Epoch 86/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.6878 - accuracy: 0.8075
+Epoch 87/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.6899 - accuracy: 0.8077
+Epoch 88/100
+2178/2178 [==============================] - 62s 29ms/step - loss: 0.6876 - accuracy: 0.8076
+Epoch 89/100
+2178/2178 [==============================] - 62s 28ms/step - loss: 0.6874 - accuracy: 0.8079
+Epoch 90/100
+2178/2178 [==============================] - 62s 28ms/step - loss: 0.6886 - accuracy: 0.8079
+Epoch 91/100
+2178/2178 [==============================] - 62s 29ms/step - loss: 0.6893 - accuracy: 0.8087
+Epoch 92/100
+2178/2178 [==============================] - 63s 29ms/step - loss: 0.6845 - accuracy: 0.8089
+Epoch 93/100
+2178/2178 [==============================] - 62s 28ms/step - loss: 0.6862 - accuracy: 0.8078
+Epoch 94/100
+2178/2178 [==============================] - 62s 28ms/step - loss: 0.6861 - accuracy: 0.8084
+Epoch 95/100
+2178/2178 [==============================] - 62s 28ms/step - loss: 0.6858 - accuracy: 0.8080
+Epoch 96/100
+2178/2178 [==============================] - 62s 29ms/step - loss: 0.6856 - accuracy: 0.8084
+Epoch 97/100
+2178/2178 [==============================] - 62s 29ms/step - loss: 0.6855 - accuracy: 0.8088
+Epoch 98/100
+2178/2178 [==============================] - 62s 28ms/step - loss: 0.6846 - accuracy: 0.8079
+Epoch 99/100
+2178/2178 [==============================] - 62s 28ms/step - loss: 0.6878 - accuracy: 0.8077
+Epoch 100/100
+2178/2178 [==============================] - 62s 28ms/step - loss: 0.6854 - accuracy: 0.8083
+<keras.engine.sequential.Sequential object at 0x000001D6B0B379D0>
+```
+![1](https://github.com/tomoko-tiba/CodingThreeFinal/assets/41440180/cfacb959-5f27-4076-9256-a08422387703)
+![2](https://github.com/tomoko-tiba/CodingThreeFinal/assets/41440180/b2e28844-375a-4b0f-87c4-c67d576cabeb)
+
+After adjusting the values, there was a noticeable improvement in the metrics. The accuracy reached 0.8, and the loss decreased to 0.68. The generated sentences also became more coherent and fluent in their structure.
+
+### Result 2:
+```
+I don't know what I want
+ so don't ask me at me that
+hello to me like a back oh no
+to mended to the man talk
+they say i say to you losers
+key in a but all you it was
+just like me whole back
+knew this won't gave there out of style
+i'd say to run out things
+we got a night in
+```
+
+```
+What is love me changed like that 
+a green light  
+taken your name on me 
+your past me me me 
+your back now it could be the one that all of you i know 
+and it could be the mean that you're my door 
+but if you're bluff sized around you 
+my friends talk to my back to 
+to me straight to me
+```
+
+```
+Just close your eyes 
+like we're rode to do it in time that way
+it now it would be the things that it was stealing baby 
+oh yeah oh yeah you say yeah yeah yeah yeah yeah yeah we
+and come oh oh and to a white horse 
+yes sellin' swift yeah ayy hoo ayy yeugh 
+chances to your face friends make plans of
+```
+
 ## Conclusion:
 By implementing the LSTM model and training it on Taylor Swift's extensive collection of lyrics, the lyrics generator has successfully learned the stylistic elements and themes characteristic of Taylor Swift's songs. The generator can now produce lyrics that closely resemble her unique style. Although some generated sentences may lack fluency, the overall readability has been noticeably enhanced.
 
